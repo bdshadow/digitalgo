@@ -6,7 +6,7 @@
   <packaging>pom</packaging>
   <name>DigitAlgo</name>
   <modules>
-  	<module>web</module>
   	<module>algos</module>
+  	<module>web</module>
   </modules>
 </project>
