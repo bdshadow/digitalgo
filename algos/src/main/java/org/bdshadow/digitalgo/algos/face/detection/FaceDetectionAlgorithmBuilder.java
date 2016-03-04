@@ -6,7 +6,7 @@ import org.bdshadow.digitalgo.algos.AbstractAlgorithmBuilder;
 public class FaceDetectionAlgorithmBuilder extends AbstractAlgorithmBuilder {
 
 	@Override
-	public IAlgorithm getAlgorithm() {
+	public IAlgorithm build() {
 		return new FaceDetectionAlgorithm();
 	}
 

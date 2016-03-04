@@ -1,22 +1,14 @@
 package org.bdshadow.digitalgo.algos.face.detection;
 
 import org.bdshadow.digitalgo.algos.IAlgorithm;
-import org.bytedeco.javacpp.opencv_core.Mat;
-import org.bytedeco.javacpp.opencv_core.RectVector;
-import org.bytedeco.javacpp.opencv_core.Scalar;
-import org.bytedeco.javacpp.opencv_core.Size;
-import org.bytedeco.javacpp.opencv_imgcodecs;
-import org.bytedeco.javacpp.opencv_imgproc;
-import org.bytedeco.javacpp.opencv_objdetect;
-import org.bytedeco.javacpp.opencv_objdetect.CascadeClassifier;
 
 public class FaceDetectionAlgorithm implements IAlgorithm {
 
-	private CascadeClassifier faceCascade = new CascadeClassifier();
+	//private CascadeClassifier faceCascade = new CascadeClassifier();
 	private int absoluteFaceSize;
 
 	public String detectAndDisplay(String input) {
-		Mat frame = opencv_imgcodecs.imread(input);
+		/*Mat frame = opencv_imgcodecs.imread(input);
 		
 		faceCascade.load("C:/dev/jee/DigitAlgo/algos/src/main/resources/org/bdshadow/digitalgo/algos/face/detection/haarcascades/haarcascade_frontalface_alt.xml");
 		RectVector faces = new RectVector();
@@ -43,7 +35,7 @@ public class FaceDetectionAlgorithm implements IAlgorithm {
 		for (int i = 0; i < faces.size(); i++)
 			opencv_imgproc.rectangle(frame, faces.get(i).tl(), faces.get(i).br(), new Scalar(0, 0, 255, 0));
 		
-		opencv_imgcodecs.imwrite("faces_output.jpg", frame);
+		opencv_imgcodecs.imwrite("faces_output.jpg", frame);*/
 		return "faces_output.jpg";
 	}
 	
