@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import org.bdshadow.digitalgo.algos.IAlgorithm;
 import org.openimaj.image.DisplayUtilities;
 import org.openimaj.image.FImage;
 import org.openimaj.image.Image;
@@ -11,18 +12,21 @@ import org.openimaj.image.ImageUtilities;
 import org.openimaj.image.MBFImage;
 import org.openimaj.image.processing.edges.CannyEdgeDetector;
 
-public class CannyEdgeDetectorAlgo {
+public class CannyEdgeDetectorAlgo implements IAlgorithm {
 	
-	private Image sourceImage;
+	private MBFImage sourceImage;
 	
-	private List<Image> result;
+	private FImage result;
 	
-	public CannyEdgeDetectorAlgo(Image sourceImage) {
+	public CannyEdgeDetectorAlgo(MBFImage sourceImage) {
 		this.sourceImage = sourceImage;
 	}
 	
+	@Override
 	public void run() {
-		
+		CannyEdgeDetector canny = new CannyEdgeDetector();
+		this.result = this.sourceImage.flatten();
+		canny.processImage(this.result);
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -33,6 +37,10 @@ public class CannyEdgeDetectorAlgo {
 		canny.processImage(fimage);
 		DisplayUtilities.display(fimage);
 
+	}
+	
+	public FImage getResult() {
+		return this.result;
 	}
 
 }

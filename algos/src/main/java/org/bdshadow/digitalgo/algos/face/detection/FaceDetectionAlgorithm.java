@@ -43,8 +43,14 @@ public class FaceDetectionAlgorithm implements IAlgorithm {
 		new FaceDetectionAlgorithm().detectAndDisplay("C://dev//jee//DigitAlgo//algos//faces.jpg");
 	}
 
-	@Override
+	//@Override
 	public String run(String input) {
 		return detectAndDisplay(input);
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 }
