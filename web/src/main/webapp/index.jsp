@@ -2,28 +2,24 @@
 <%
    String contextPath = getServletContext().getContextPath();
 %>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<title>Errai - Tutorial</title>
-<meta name="description" content="">
-<meta name="author" content="">
+<meta charset="UTF-8">
+<title>Host Page Template</title>
 
-<link href="<%=contextPath%>/styles/bootstrap.min.css" rel="stylesheet">
-<link href="<%=contextPath%>/styles/style-responsive.css" rel="stylesheet">
-
-<link href='http://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-
+<link href="<%=contextPath%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=contextPath%>/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="<%=contextPath%>/bootstrap/css/main.css" rel="stylesheet">
 
 <script type="text/javascript" src="<%=contextPath%>/DigitAlgo/DigitAlgo.nocache.js"></script>
-</head>
 
+</head>
 <body>
   <div id="rootPanel"></div>
-
   <iframe src="javascript:''" id="__gwt_historyFrame" style="width: 0; height: 0; border: 0"></iframe>
-
-  <script src="<%=contextPath%>/script/bootstrap.min.js"></script>
+  
+  <script type="text/javascript" src="<%=contextPath%>/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>
 </html>

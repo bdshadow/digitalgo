@@ -1,4 +1,4 @@
-package org.bdshadow.digitalgo;
+package org.bdshadow.digitalgo.servlets;
 
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;

@@ -50,6 +50,11 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+		<groupId>com.googlecode.gwtupload</groupId>
+		<artifactId>gwtupload</artifactId>
+		<version>1.0.3</version>
+	</dependency>
+    <dependency>
       <groupId>org.jboss.errai</groupId>
       <artifactId>errai-cdi-jboss</artifactId>
     </dependency>
@@ -192,7 +197,7 @@
           <extraJvmArgs>-Xmx2048m -XX:CompileThreshold=7000 -XX:MaxPermSize=512M -Derrai.jboss.home=${errai.jboss.home} -Derrai.dev.context=${errai.dev.context}</extraJvmArgs>          
           <server>org.jboss.errai.cdi.server.gwt.EmbeddedWildFlyLauncher</server>
           <disableCastChecking>true</disableCastChecking>
-          <runTarget>${errai.dev.context}/index.html</runTarget>
+          <runTarget>${errai.dev.context}</runTarget>
           <soyc>false</soyc>
           <hostedWebapp>src/main/webapp</hostedWebapp>
           <strict>true</strict>

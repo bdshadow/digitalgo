@@ -4,6 +4,7 @@
 
 <module rename-to="DigitAlgo">
 	<inherits name="org.jboss.errai.enterprise.All" />
+	<inherits name="gwtupload.GWTUpload" />
 
 	<replace-with class="org.bdshadow.digitalgo.client.Config">
 		<when-type-is class="org.jboss.errai.bus.client.framework.Configuration" />
