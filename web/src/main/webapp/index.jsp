@@ -11,6 +11,7 @@
 <link href="<%=contextPath%>/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="<%=contextPath%>/bootstrap/css/main.css" rel="stylesheet">
+<link href="<%=contextPath%>/bootstrap/css/scrollbar.css" rel="stylesheet">
 
 <script type="text/javascript" src="<%=contextPath%>/DigitAlgo/DigitAlgo.nocache.js"></script>
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/6.1.5/css/bootstrap-slider.min.css">
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/6.1.5/bootstrap-slider.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+	<div id="algodiv">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img
+						id="inputImage"
+						src="http://www.joomlack.fr/images/demos/demo2/on-top-of-earth.jpg"
+						alt="Input image">
+					<div class="caption text-center">
+						<h3>Input image</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img
+						src="http://www.joomlack.fr/images/demos/demo2/on-top-of-earth.jpg"
+						alt="Result image">
+					<div class="caption text-center">
+						<h3>Result image</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<div class="caption text-center">
+						<h3>Parameters</h3>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="thumbnail">
+								<h5>Lower hysteresis threshold</h5>
+								<input id="lowThresh" data-slider-id='lowThreshSlider'
+									type="text" data-slider-min="0.01" data-slider-max="0.99"
+									data-slider-step="0.01" data-slider-value="0.5" />
+								 <!-- <input id="lowThreshValue" type="text" /> -->
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="thumbnail">
+								<h5>Upper hysteresis threshold</h5>
+								<input id="highThresh" data-slider-id='highThreshSlider'
+									type="text" data-slider-min="0.01" data-slider-max="0.99"
+									data-slider-step="0.01" data-slider-value="0.5" />
+								 <!-- <input id="highThreshValue" type="text" /> -->
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="thumbnail">
+								<h5>The amount of initial blurring</h5>
+								<input style="width:100%" id="sigma" data-slider-id='sigmaSlider'
+									type="text" data-slider-min="0.01" data-slider-max="100"
+									data-slider-step="0.01" data-slider-value="1" />
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+var slider = new Slider('#lowThresh', {
+	formatter: function(value) {
+		return value;
+	}
+});
+var slider = new Slider('#highThresh', {
+	formatter: function(value) {
+		return  value;
+	}
+});
+var slider = new Slider('#sigma', {
+	formatter: function(value) {
+		return value;
+	}
+});
+</script>
+</body>
+</html>

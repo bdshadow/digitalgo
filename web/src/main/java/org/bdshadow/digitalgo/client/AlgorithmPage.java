@@ -1,7 +1,9 @@
 package org.bdshadow.digitalgo.client;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
+import org.bdshadow.digitalgo.algos.feature.detection.edge.CannyEdgeDetectorAlgoTemplate;
 import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -10,9 +12,7 @@ import org.jboss.errai.ui.shared.api.annotations.Templated;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.InlineLabel;
 
-import gwtupload.client.IFileInput;
 import gwtupload.client.IFileInput.FileInputType;
 import gwtupload.client.IUploadStatus.Status;
 import gwtupload.client.IUploader;
@@ -27,6 +27,10 @@ public class AlgorithmPage extends Composite {
 	
 	@DataField
 	private FlowPanel panelImages = new FlowPanel();
+	
+	@Inject
+	@DataField
+	private CannyEdgeDetectorAlgoTemplate algo;
 	
 	@DataField
 	private MultiUploader uploader;
