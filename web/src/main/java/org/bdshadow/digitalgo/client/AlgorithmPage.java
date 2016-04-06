@@ -3,7 +3,7 @@ package org.bdshadow.digitalgo.client;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import org.bdshadow.digitalgo.algos.feature.detection.edge.CannyEdgeDetectorAlgoTemplate;
+import org.bdshadow.digitalgo.client.algos.feature.detection.edge.CannyEdgeDetectorAlgoTemplate;
 import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -21,7 +21,7 @@ import gwtupload.client.MultiUploader;
 import gwtupload.client.PreloadedImage;
 import gwtupload.client.PreloadedImage.OnLoadPreloadedImageHandler;
 
-@Page(path = "algorithm", role = DefaultPage.class)
+//@Page(path = "algorithm", role = DefaultPage.class)
 @Templated("templates/algorithm.html#algodiv")
 public class AlgorithmPage extends Composite {
 	
