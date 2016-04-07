@@ -21,7 +21,7 @@ import gwtupload.client.MultiUploader;
 import gwtupload.client.PreloadedImage;
 import gwtupload.client.PreloadedImage.OnLoadPreloadedImageHandler;
 
-//@Page(path = "algorithm", role = DefaultPage.class)
+@Page(path = "algorithm", role = DefaultPage.class)
 @Templated("templates/algorithm.html#algodiv")
 public class AlgorithmPage extends Composite {
 	
