@@ -18,15 +18,16 @@
   
   <properties>
     <errai.dev.context>${project.artifactId}</errai.dev.context>
-    <errai.jboss.home>${project.build.directory}/wildfly-8.2.0.Final</errai.jboss.home>
+    <as.version>8.1.0.Final</as.version>
+    <errai.jboss.home>${project.build.directory}/wildfly-${as.version}</errai.jboss.home>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <slf4j.version>1.5.11</slf4j.version>
-    <errai.version>3.2.1.Final</errai.version>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <errai.version>4.0.0.Beta1</errai.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <javaee.version>1.0.2.Final</javaee.version>
-    <gwt.version>2.7.0</gwt.version>
+    <gwt.version>2.8.0-beta1</gwt.version>
   </properties>
   
   <dependencyManagement>
@@ -38,80 +39,42 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+       <groupId>com.google.guava</groupId>
+       <artifactId>guava-gwt</artifactId>
+       <version>20.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+       <groupId>com.google.guava</groupId>
+       <artifactId>guava</artifactId>
+       <version>20.0-SNAPSHOT</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   
   <dependencies> 
   	<dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-javaee-all</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-tools</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
     </dependency>
+    
     <dependency>
 		<groupId>com.googlecode.gwtupload</groupId>
 		<artifactId>gwtupload</artifactId>
 		<version>1.0.3</version>
 	</dependency>
+
     <dependency>
       <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-cdi-jboss</artifactId>
+      <artifactId>errai-javaee-all</artifactId>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
+    
     <dependency>
       <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-jboss-as-support</artifactId>
+      <artifactId>errai-cordova</artifactId>
+      <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-ioc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-bus</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-cdi-client</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-ui</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-data-binding</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-weld-integration</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-jpa-client</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.errai</groupId>
-      <artifactId>errai-jpa-datasync</artifactId>
-    </dependency>
-    <dependency>
-    	<groupId>org.jboss.errai</groupId>
-    	<artifactId>errai-navigation</artifactId>
-	</dependency>
-	<dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-    </dependency>
+    
     <dependency>
       <groupId>org.jboss.spec</groupId>
       <artifactId>jboss-javaee-7.0</artifactId>
@@ -119,12 +82,39 @@
       <type>pom</type>
       <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-cdi-jboss</artifactId>
+    </dependency>
+
+   <dependency>
+    <groupId>org.jboss.errai</groupId>
+    <artifactId>errai-cdi-server</artifactId>
+   </dependency>
   </dependencies>
   
   <repositories>
     <repository>
-      <id>JBOSS_NEXUS</id>
-      <url>http://repository.jboss.org/nexus/content/groups/public</url>
+      <id>jboss</id>
+      <name>JBoss Public Repo</name>
+      <url>https://repository.jboss.org/nexus/content/groups/public</url>
+    </repository>
+    <repository>
+      <id>sonatype-public</id>
+      <name>Sonatype Public Snapshots Repo</name>
+      <url>https://oss.sonatype.org/content/repositories/public</url>
     </repository>
   </repositories>
   
@@ -145,7 +135,7 @@
                   <pluginExecutionFilter>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
-                    <versionRange>[2.7.0,)</versionRange>
+                    <versionRange>[2.8.0,)</versionRange>
                     <goals>
                       <goal>resources</goal>
                     </goals>
@@ -200,7 +190,7 @@
             to avoid class loading problems for classes that are not needed on the server. 
             To configure an alternative package filter for client-only classes, specify: 
             -Derrai.client.local.class.pattern=.*/myproject/client/.* -->
-          <extraJvmArgs>-Xmx2048m -XX:CompileThreshold=7000 -XX:MaxPermSize=512M -Derrai.jboss.home=${errai.jboss.home} -Derrai.dev.context=${errai.dev.context}</extraJvmArgs>          
+          <extraJvmArgs>-Xmx2048m -XX:CompileThreshold=7000 -Derrai.jboss.home=${errai.jboss.home} -Derrai.dev.context=${errai.dev.context}</extraJvmArgs>          
           <server>org.jboss.errai.cdi.server.gwt.EmbeddedWildFlyLauncher</server>
           <disableCastChecking>true</disableCastChecking>
           <runTarget>${errai.dev.context}</runTarget>
@@ -231,8 +221,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.5.1</version>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
       <!-- Unpack jboss-as from maven. Remove this if you wish to use your 

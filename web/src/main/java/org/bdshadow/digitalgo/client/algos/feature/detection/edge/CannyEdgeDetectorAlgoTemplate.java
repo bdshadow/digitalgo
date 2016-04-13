@@ -53,10 +53,10 @@ public class CannyEdgeDetectorAlgoTemplate extends Composite {
 
 					@Override
 					public void onSuccess(Void result) {
-						ScriptInjector.fromUrl("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/6.1.7/bootstrap-slider.js").setRemoveTag(false).setWindow(ScriptInjector.TOP_WINDOW).inject();
+						ScriptInjector.fromUrl("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/6.1.7/bootstrap-slider.js").setWindow(ScriptInjector.TOP_WINDOW).inject();
 						
 					}
-				}).setRemoveTag(false).setWindow(ScriptInjector.TOP_WINDOW).inject();
+				}).setWindow(ScriptInjector.TOP_WINDOW).inject();
 			}
 			
 			@Override
@@ -64,7 +64,7 @@ public class CannyEdgeDetectorAlgoTemplate extends Composite {
 				// TODO Auto-generated method stub
 				
 			}
-		}).setRemoveTag(false).setWindow(ScriptInjector.TOP_WINDOW).inject();
+		}).setWindow(ScriptInjector.TOP_WINDOW).inject();
 		
 	}
 }
