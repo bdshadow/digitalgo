@@ -5,6 +5,11 @@
 <module rename-to="DigitAlgo">
 	<inherits name="org.jboss.errai.enterprise.All" />
 	<inherits name="gwtupload.GWTUpload" />
+	
+	
+  	<inherits name="org.jboss.errai.common.ErraiCommon" />
+  	<set-property name="gwt.logging.enabled" value="TRUE"/>
+  	<set-property name="gwt.logging.logLevel" value="ALL"/>
 
 	<replace-with class="org.bdshadow.digitalgo.client.Config">
 		<when-type-is class="org.jboss.errai.bus.client.framework.Configuration" />
